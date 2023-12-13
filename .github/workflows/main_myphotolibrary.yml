@@ -58,5 +58,5 @@ jobs:
         with:
           app-name: 'MyPhotoLibrary'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5F99D4BA84DC4FB2A58D3192CFC368A5 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4747464BD9364548B9417054289E57C2 }}
           package: .
