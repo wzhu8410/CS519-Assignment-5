@@ -8,10 +8,10 @@ const app = express();
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-app.use(express.static(path.join(__dirname, 'my-photo-library', 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/WEB*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'my-photo-library', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname,'build', 'index.html'));
 });
 
 app.get('/getImage', (req, res) => {
