@@ -234,7 +234,7 @@ app.get('/getImage', async (req, res) => {
         const Base64Images = await generateBase64Images(ThumbnailURLs);
         console.log(Base64Images);
 
-        const totalPages = await imageInfoCollection.countDocuments();
+        let totalPages = await imageInfoCollection.countDocuments();
         totalPages = Math.floor((totalPages - 1) / 8) + 1;
         const images = {
             "images": Base64Images,
