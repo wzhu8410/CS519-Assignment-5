@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json({ limit: '50mb' }));
 
 app.get('/WEB*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'my-photo-library', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 const connectionString = 'DefaultEndpointsProtocol=https;AccountName=imagequeue;AccountKey=Lk6oFDUe09G7op84LNGt0FJ27ogcGifctO8IJds3F1OHraCetqBio/BE8LrAMyLMiMtNYHSgjUn6+AStcfPHOA==;EndpointSuffix=core.windows.net';
