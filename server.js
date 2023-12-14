@@ -15,7 +15,7 @@ const app = express();
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-app.use(express.static(path.join(__dirname, 'my-photo-library', 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json({ limit: '50mb' }));
 
 app.get('/WEB*', (req, res) => {
