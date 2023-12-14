@@ -235,6 +235,7 @@ app.get('/getImage', async (req, res) => {
         console.log(Base64Images);
 
         const totalPages = await imageInfoCollection.countDocuments();
+        totalPages = Math.floor((totalPages - 1) / 8) + 1;
         const images = {
             "images": Base64Images,
             "totalPages": totalPages
