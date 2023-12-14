@@ -38,8 +38,9 @@ app.post('/API1', upload.single('file'), async (req, res) => {
             filename: filename,
             image: encodedImage
         };
-
-        await queueClient.sendMessage(JSON.stringify(imageJson));
+        jsonString = JSON.stringify(imageJson);
+        const base64String = Buffer.from(jsonString).toString('base64');
+        await queueClient.sendMessage(base64String);
         res.status(200).send('Image uploaded to queue');
     } catch (error) {
         console.error(error);
@@ -232,7 +233,6 @@ app.get('/getImage', async (req, res) => {
         }
 
         const Base64Images = await generateBase64Images(ThumbnailURLs);
-        console.log(Base64Images);
 
         let totalPages = await imageInfoCollection.countDocuments();
         totalPages = Math.floor((totalPages - 1) / 8) + 1;
